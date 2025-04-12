@@ -1,4 +1,5 @@
 import { NavBar } from "./components/NavBar";
+import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
     <>
       <NavBar />
       <Hero />
+      <Footer />
     </>
   );
 };
