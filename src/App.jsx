@@ -1,9 +1,13 @@
+import { NavBar } from "./components/NavBar";
+import Hero from "./sections/Hero";
+
 const App = () => {
   return (
-    <div>
-      <h1>Welcome to 3D portfolio</h1>
-    </div>
-  )
-}
+    <>
+      <NavBar />
+      <Hero />
+    </>
+  );
+};
 
-export default App
+export default App;
