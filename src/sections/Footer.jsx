@@ -1,6 +1,14 @@
+import { memo } from "react";
 import { socialImgs } from "../constants";
 
-const Footer = () => {
+const socialLinks = {
+  insta: "https://instagram.com/rafiqdevhub",
+  fb: "https://facebook.com/rafiqdevhub",
+  x: "https://x.com/rafiqdevhub",
+  linkedin: "https://linkedin.com/in/rafiqdevhub",
+};
+
+const Footer = memo(() => {
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -8,10 +16,23 @@ const Footer = () => {
           <p>Terms & Conditions</p>
         </div>
         <div className="socials">
-          {socialImgs.map((socialImg, index) => (
-            <div key={index} className="icon">
-              <img src={socialImg.imgPath} alt="social icon" />
-            </div>
+          {socialImgs.map((socialImg) => (
+            <a
+              key={socialImg.name}
+              href={socialLinks[socialImg.name]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon transition-transform hover:scale-110"
+              aria-label={`Follow on ${socialImg.name}`}
+            >
+              <img
+                src={socialImg.imgPath}
+                alt={`${socialImg.name} icon`}
+                loading="lazy"
+                width={24}
+                height={24}
+              />
+            </a>
           ))}
         </div>
         <div className="flex flex-col justify-center">
@@ -22,6 +43,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;
