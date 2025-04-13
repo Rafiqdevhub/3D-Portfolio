@@ -6,6 +6,7 @@ const socialLinks = {
   fb: "https://facebook.com/rafiqdevhub",
   x: "https://x.com/rafiqdevhub",
   linkedin: "https://linkedin.com/in/rafiqdevhub",
+  github: "https://github.com/rafiqdevhub",
 };
 
 const Footer = memo(() => {
